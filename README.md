@@ -2,10 +2,10 @@
 
 **Student:** Mariyam Usubalieva ComCEH-24
 
-## 📄 Description
+##  Description
 This is a JavaFX-based desktop application for booking airline tickets. The system allows users to register, login, view available flights, and book tickets. Admins can manage flight information.
 
-## 🎯 Objectives
+##  Objectives
 - Develop a user-friendly interface for booking flights.
 - Implement role-based authentication for customers and admins.
 - Allow admins to add, update, and delete flight records.
