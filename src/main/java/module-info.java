@@ -5,8 +5,6 @@ module com.example.finalproject {
     requires mysql.connector.java;
     requires java.desktop;
 
-
-
     opens com.example.final_project to javafx.fxml;
     exports com.example.final_project;
 }

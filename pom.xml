@@ -55,7 +55,6 @@
     </dependency>
 
   </dependencies>
-
   <build>
     <plugins>
       <!-- Maven Compiler Plugin for Java 17 -->
