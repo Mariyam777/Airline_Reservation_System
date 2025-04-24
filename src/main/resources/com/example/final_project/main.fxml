@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.final_project.MainController" spacing="20"
+      style="-fx-padding: 30; -fx-background-color: #f5f5f5;">
+
+    <Label text="Airline Reservation System" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+    <!-- Login Section -->
+    <GridPane fx:id="loginPane" alignment="center" hgap="10" vgap="10">
+        <!-- Username и Password поля -->
+        <TextField fx:id="usernameField" GridPane.rowIndex="0" promptText="Username"/>
+        <PasswordField fx:id="passwordField" GridPane.rowIndex="1" promptText="Password"/>
+
+
+        <!-- Кнопки Login и Register -->
+        <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <Button fx:id="loginButton"
+                    text="Login"
+                    onAction="#handleLogin"
+                    style="-fx-base: #4caf50; -fx-min-width: 100;"/>
+            <Button fx:id="registerButton"
+                    text="Register"
+                    onAction="#openRegisterWindow"
+                    style="-fx-base: #2196f3; -fx-min-width: 100;"/>
+        </HBox>
+    </GridPane>
+
+
+
+
+    <!-- Status -->
+    <Label fx:id="statusLabel" style="-fx-text-fill: #f44336;"/>
+
+    <!-- Flights Table -->
+    <TableView fx:id="flightTable">
+        <columns>
+            <TableColumn fx:id="flightNumberColumn" text="Flight #" prefWidth="100"/>
+            <TableColumn fx:id="originColumn" text="From" prefWidth="150"/>
+            <TableColumn fx:id="destinationColumn" text="To" prefWidth="150"/>
+            <TableColumn fx:id="departureColumn" text="Departure" prefWidth="150"/>
+            <TableColumn fx:id="priceColumn" text="Price ($)" prefWidth="100"/>
+            <TableColumn fx:id="availableSeatsColumn" text="Available" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <!-- Action Buttons -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id="addFlightButton" text="Add Flight" onAction="#addFlight" visible="false"
+                style="-fx-background-color: #2196f3; -fx-text-fill: white;"/>
+        <Button fx:id="deleteFlightButton" text="Delete Flight" onAction="#deleteFlight" visible="false"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button fx:id="bookFlightButton" text="Book Flight" onAction="#bookFlight" visible="false"
+                style="-fx-background-color: #4caf50; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
+
+
