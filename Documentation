@@ -1,4 +1,4 @@
-##Documentation 
+# Documentation 
 This project is a Flight Booking System developed using Java and Spring Boot, with a simple graphical interface using JavaFX or Swing. The system allows user registration, login, flight viewing, and booking. Admins can add flights to the system. The entire system is built to work with in-memory data storage without a database.
 
 Algorithms Used
