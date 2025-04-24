@@ -41,7 +41,6 @@ public class AddFlightController {
             stmt.setInt(6, totalSeats);
             stmt.executeUpdate();
 
-            // Закрываем окно после добавления
             Stage stage = (Stage) flightNumberField.getScene().getWindow();
             stage.close();
 

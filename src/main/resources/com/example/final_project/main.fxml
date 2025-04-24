@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.final_project.MainController" spacing="20"
@@ -11,14 +9,10 @@
 
     <Label text="Airline Reservation System" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
 
-    <!-- Login Section -->
     <GridPane fx:id="loginPane" alignment="center" hgap="10" vgap="10">
-        <!-- Username и Password поля -->
         <TextField fx:id="usernameField" GridPane.rowIndex="0" promptText="Username"/>
         <PasswordField fx:id="passwordField" GridPane.rowIndex="1" promptText="Password"/>
 
-
-        <!-- Кнопки Login и Register -->
         <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
             <Button fx:id="loginButton"
                     text="Login"
@@ -32,12 +26,8 @@
     </GridPane>
 
 
-
-
-    <!-- Status -->
     <Label fx:id="statusLabel" style="-fx-text-fill: #f44336;"/>
 
-    <!-- Flights Table -->
     <TableView fx:id="flightTable">
         <columns>
             <TableColumn fx:id="flightNumberColumn" text="Flight #" prefWidth="100"/>
@@ -49,7 +39,6 @@
         </columns>
     </TableView>
 
-    <!-- Action Buttons -->
     <HBox spacing="15" alignment="CENTER">
         <Button fx:id="addFlightButton" text="Add Flight" onAction="#addFlight" visible="false"
                 style="-fx-background-color: #2196f3; -fx-text-fill: white;"/>

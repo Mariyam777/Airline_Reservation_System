@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -145,8 +144,8 @@ public class MainController {
             Stage stage = new Stage();
             stage.setTitle("Add Flight");
             stage.setScene(new Scene(root));
-            stage.showAndWait();  // Ожидаем закрытие окна
-            loadFlights();        // Обновляем таблицу после добавления
+            stage.showAndWait();
+            loadFlights();
         } catch (Exception e) {
             Main.showError("Error", "Unable to open Add Flight window:\n" + e.getMessage());
         }

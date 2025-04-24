@@ -21,7 +21,6 @@ public class Main extends Application {
             // 2. Load FXML
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/final_project/main.fxml"));
 
-            // 3. Setup stage
             primaryStage.setTitle("Airline Reservation System");
             primaryStage.setScene(new Scene(root, 900, 600));
             primaryStage.show();
@@ -53,7 +52,6 @@ public class Main extends Application {
                             "total_seats INT NOT NULL)"
             );
 
-// Create users table
             conn.createStatement().executeUpdate(
                     "CREATE TABLE IF NOT EXISTS users (\n" +
                             "    id INT AUTO_INCREMENT PRIMARY KEY,\n" +
@@ -63,7 +61,6 @@ public class Main extends Application {
                             ");\n"
             );
 
-// Insert default user
             conn.createStatement().executeUpdate(
                     "INSERT IGNORE INTO users (username, password) VALUES ('admin', 'admin123')"
             );
