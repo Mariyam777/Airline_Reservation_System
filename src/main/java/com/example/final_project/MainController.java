@@ -59,7 +59,7 @@ public class MainController {
                 loadFlights();
                 configureUIForRole(role);
             } else {
-                Main.showError("Login Failed", "Invalid credentials");
+                Main.showError("Login Failed", "Invalid credentials"); 
             }
         } catch (SQLException e) {
             Main.showError("Database Error", e.getMessage());

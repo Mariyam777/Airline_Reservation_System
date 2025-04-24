@@ -11,6 +11,7 @@ public class RegisterController {
     @FXML private ChoiceBox<String> roleChoiceBox;
     @FXML private Label statusLabel;
 
+
     @FXML
     private void initialize() {
         roleChoiceBox.setValue("user");

@@ -6,6 +6,7 @@ module com.example.finalproject {
     requires java.desktop;
 
 
+
     opens com.example.final_project to javafx.fxml;
     exports com.example.final_project;
 }
