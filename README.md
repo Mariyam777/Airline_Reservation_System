@@ -1,6 +1,6 @@
-# Airline Reservation System Student ID: 240141005
-**Name: Mariyam Usubalieva
-**Group:ComCEH-24
+# Airline Reservation System . Student ID: 240141005
+*Name: Mariyam Usubalieva
+*Group:ComCEH-24
 
 ##  Description
 This is a JavaFX-based desktop application for booking airline tickets. The system allows users to register, login, view available flights, and book tickets. Admins can manage flight information.
