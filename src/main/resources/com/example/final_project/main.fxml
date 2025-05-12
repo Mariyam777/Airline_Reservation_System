@@ -25,6 +25,15 @@
         </HBox>
     </GridPane>
 
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Enter city (from/to)"/>
+        <Button text="Search" onAction="#searchFlights"/>
+    </HBox>
+
+
+
+
+
 
     <Label fx:id="statusLabel" style="-fx-text-fill: #f44336;"/>
 
@@ -48,5 +57,4 @@
                 style="-fx-background-color: #4caf50; -fx-text-fill: white;"/>
     </HBox>
 </VBox>
-
 

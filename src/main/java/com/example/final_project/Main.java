@@ -1,3 +1,4 @@
+
 package com.example.final_project;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,14 +12,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main extends Application {
-
     @Override
     public void start(Stage primaryStage) {
         try {
-            // 1. Initialize database
             initializeDatabase();
 
-            // 2. Load FXML
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/final_project/main.fxml"));
 
             primaryStage.setTitle("Airline Reservation System");
@@ -35,11 +33,9 @@ public class Main extends Application {
         try (Connection conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/test", "root", "root123")) {
 
-            // Create database and tables
             conn.createStatement().executeUpdate("CREATE DATABASE IF NOT EXISTS test");
             conn.createStatement().executeUpdate("USE test");
 
-            // Create flights table
             conn.createStatement().executeUpdate(
                     "CREATE TABLE IF NOT EXISTS flights (" +
                             "id INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -70,7 +66,6 @@ public class Main extends Application {
         }
     }
 
-
     public static void showError(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -83,3 +78,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+

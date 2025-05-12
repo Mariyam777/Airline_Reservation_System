@@ -24,6 +24,8 @@ public class MainController {
     @FXML private TableColumn<Flight, String> departureColumn;
     @FXML private TableColumn<Flight, Double> priceColumn;
     @FXML private TableColumn<Flight, Integer> availableSeatsColumn;
+    @FXML private TextField searchField;
+
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
@@ -32,6 +34,7 @@ public class MainController {
     @FXML private Button addFlightButton;
     @FXML private Button deleteFlightButton;
     @FXML private Button bookFlightButton;
+
 
     private String currentUser;
 
@@ -64,6 +67,7 @@ public class MainController {
             Main.showError("Database Error", e.getMessage());
         }
     }
+
     @FXML
     private void openRegisterWindow() {
         try {
@@ -77,8 +81,6 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
-
 
 
     private void configureUIForRole(String role) {
@@ -135,7 +137,6 @@ public class MainController {
     }
 
 
-    // 💡 Открытие отдельного окна для добавления рейса
     @FXML
     private void addFlight() {
         try {
@@ -171,6 +172,46 @@ public class MainController {
             Main.showError("Delete Error", "Select a flight to delete.");
         }
     }
+    @FXML
+    private void searchFlights() {
+        String keyword = searchField.getText().trim().toLowerCase();
+        if (keyword.isEmpty()) {
+            try {
+                loadFlights();
+            } catch (SQLException e) {
+                Main.showError("Error", e.getMessage());
+            }
+            return;
+        }
+
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/test", "root", "root123")) {
+
+            String query = "SELECT * FROM flights WHERE LOWER(origin) LIKE ? OR LOWER(destination) LIKE ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, "%" + keyword + "%");
+            stmt.setString(2, "%" + keyword + "%");
+
+            ResultSet rs = stmt.executeQuery();
+            List<Flight> filteredFlights = new ArrayList<>();
+
+            while (rs.next()) {
+                filteredFlights.add(new Flight(
+                        rs.getString("flight_number"),
+                        rs.getString("origin"),
+                        rs.getString("destination"),
+                        rs.getString("departure_date"),
+                        rs.getDouble("price"),
+                        rs.getInt("total_seats"),
+                        rs.getInt("booked_seats")
+                ));
+            }
+
+            flightTable.setItems(FXCollections.observableArrayList(filteredFlights));
+        } catch (SQLException e) {
+            Main.showError("Database Error", e.getMessage());
+        }
+    }
 
     @FXML
     private void bookFlight() {
@@ -201,6 +242,8 @@ public class MainController {
         }
     }
 
+
+
     public static class Flight {
         private final String flightNumber;
         private final String origin;
@@ -229,4 +272,5 @@ public class MainController {
         public int getAvailableSeats() { return totalSeats - bookedSeats; }
     }
 }
+
 
