@@ -67,4 +67,8 @@ NullPointerException: Care had to be taken to handle cases where lists (e.g., bo
 This documentation outlines the internal logic, components, and development challenges of the project in a clear and concise manner. It reflects the simplicity and effectiveness of using core Java with Spring Boot for basic management systems.
 
 #Tests
+##Login panel
+![login](photos/Login.png)
+
+##Login like admin
 ![login](photos/admin.png)
