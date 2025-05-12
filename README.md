@@ -66,9 +66,22 @@ NullPointerException: Care had to be taken to handle cases where lists (e.g., bo
 
 This documentation outlines the internal logic, components, and development challenges of the project in a clear and concise manner. It reflects the simplicity and effectiveness of using core Java with Spring Boot for basic management systems.
 
-#Tests
-##Login panel
+# Tests
+## Login panel
 ![login](photos/Login.png)
 
-##Login like admin
+## Login like admin
 ![login](photos/admin.png)
+
+## In admin you can add or delete
+![login](photos/addflighht.png)
+
+## Added in list
+![login](photos/save.png)
+
+## Also you can register like user
+![login](photos/register.png)
+![login](photos/register2.png)
+
+## And this is user panel
+![login](photos/userpanel.png)
