@@ -12,7 +12,50 @@ This is a JavaFX-based desktop application for booking airline tickets. The syst
 - Enable customers to book and view their flights.
 - Use MySQL for persistent storage.
 
-#Documentation
+
+# Project Requirement 
+
+This list defines the key features and deliverables that must be implemented in the project to achieve its objectives.
+
+1. **User Registration**  
+   - Users must be able to register with a unique username, password, and role (user/admin).
+
+2. **User Login Authentication**  
+   - Registered users must log in with valid credentials to access the system.
+
+3. **Role-Based Access Control**  
+   - The system must distinguish between admin and regular users to enable role-specific functionality.
+
+4. **Admin: Add Flight Information**  
+   - Admin users must be able to add new flight records with details such as flight number, origin, destination, date, price, and seat count.
+
+5. **View Available Flights**  
+   - Users must be able to view a list of all available flights from the database.
+
+6. **Book Flights**  
+   - Users must be able to select a flight, specify the number of tickets, and confirm the booking.
+
+7. **Seat Availability Validation**  
+   - The system must ensure there are enough available seats before confirming a booking.
+
+8. **Save Booking Information**  
+   - Each booking must be recorded in the `bookings` table with the user’s name, flight number, and quantity of tickets.
+
+9. **View User Bookings**  
+   - Users must be able to view their own bookings in a table format.
+
+10. **Graphical User Interface (GUI)**  
+    - The system must provide a user-friendly GUI using JavaFX with navigation between scenes.
+
+11. **Database Integration (MySQL)**  
+    - The application must connect to a MySQL database to store and retrieve flight, user, and booking information.
+
+12. **Prepared Statements for Security**  
+    - All database interactions must use `PreparedStatement` to prevent SQL injection.
+
+13. **Project Structured with MVC Principles**  
+    - The code must follow a clear separation between UI (FXML), logic (controllers), and data (database).
+
 # Documentation 
 This project is a Flight Booking System developed using Java and Spring Boot, with a simple graphical interface using JavaFX or Swing. The system allows user registration, login, flight viewing, and booking. Admins can add flights to the system. The entire system is built to work with in-memory data storage without a database.
 
