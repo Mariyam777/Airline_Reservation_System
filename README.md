@@ -65,3 +65,6 @@ Scene Navigation: Managing transitions between multiple screens in JavaFX or Swi
 NullPointerException: Care had to be taken to handle cases where lists (e.g., booked flights) might be empty or uninitialized.
 
 This documentation outlines the internal logic, components, and development challenges of the project in a clear and concise manner. It reflects the simplicity and effectiveness of using core Java with Spring Boot for basic management systems.
+
+#Tests
+![login](photos/admin.png)
